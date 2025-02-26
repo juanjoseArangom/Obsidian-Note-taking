@@ -89,3 +89,14 @@ La respuesta depende del contexto y de cómo se interprete el **PER (Price-to-Ea
 - **PER alto**: Mejor si buscas crecimiento futuro y aceptas riesgos.  
 - **PER bajo**: Mejor si priorizas estabilidad y valor tangible.  
 - **¡Nunca lo uses de forma aislada!** Combínalo con análisis cualitativo (ventajas competitivas, sector, gestión) y otros ratios financieros.  
+
+# Métodos para valorar acciones
+## Price to Sales ratio (P/S)
+Se calcula tomando la **capitalización bursátil (Precio por acción x # de acciones)** de la empresa dividido sobre el # de ventas totales del negocio. Sirve para valorar empresas que están en crecimiento. Esto se debe a que normalmente hay empresas que gastan o reinvierten gran cantidad de sus ingresos en seguir creciendo, tienen beneficios netos pequeños.  
+
+## Price to Book Value ratio
+Las empresas tienen activos y pasivos. La resta de los pasivos a los activos nos da el valor del **patrimonio neto**. Luego al dividir ese valor por el **# de acciones** obtenemos el patrimonio neto por acción o valor en libros por acción. Finalmente, comparamos el precio de mercado de la acción con el valor en libros de la acción. Sirve para valorar **bancos y empresas financieras**. 
+*1,4 es un valor atractivo para este ratio*. Si es inferior a este es todavía mejor. 
+
+## Price to Free Cash Flow ratio
+Divide el precio de mercado con el flujo de caja libre de la empresa.
