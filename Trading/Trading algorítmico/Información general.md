@@ -1,3 +1,11 @@
+## Secciones
+### Sección 5:
+[[Descargar datos]]
+[[Implementación de estrategias de Trading Algorítmico]]
+[[Rendimiento simple vs Rendimiento logarítmico]]
+
+### Sección 6:
+
 ## Relacionado con
 [[Implementación de estrategias de Trading Algorítmico]]
 [[Análisis técnico]]

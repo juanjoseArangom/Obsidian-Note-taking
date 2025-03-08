@@ -1,0 +1,1 @@
+Permite conocer cómo se ha comportado una estrategia o inversión durante un período de tiempo. Podemos saber si su eficiencia ha sido constante o si solo lo fue durante cierto período de tiempo específico. Se puede calcular con rendimientos simples y logarítmicos.
