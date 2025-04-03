@@ -6,6 +6,7 @@
 
 ### Sección 6:
 
+
 ## Relacionado con
 [[Implementación de estrategias de Trading Algorítmico]]
 [[Análisis técnico]]
