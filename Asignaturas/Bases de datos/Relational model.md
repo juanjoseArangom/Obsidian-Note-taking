@@ -532,3 +532,133 @@ These strategies are defined in the **referential integrity constraints** of the
 | PROGRAMMED  | Custom behavior via triggers/code   | ✅ If coded correctly           | Flexible, but adds complexity |
 
 These deletion strategies ensure that **key constraints** remain consistent even as data is removed, and each has its place depending on the needs of your system.
+
+---
+# Other Relational Model Keys Explained 🔑
+
+In the world of relational databases, keys are fundamental for identifying and linking data. Think of them as essential tools for keeping your information organized and accurate. Let's explore some common types:
+
+## 🥇 Superkey
+
+A superkey is any single attribute or set of attributes that uniquely identifies a row (or tuple) in a table. It's the most basic form of a key. A table can have many superkeys.
+
+**Concept:** Uniqueness is the key here! If you have a set of attributes, and you can point to exactly one row using those attributes, you've got a superkey.
+
+**Example:**
+
+Consider a `🙋‍♀️ Students` table with the following attributes:
+
+* `StudentID`
+* `📚 EnrollmentNumber`
+* `📧 Email`
+* `📛 FirstName`
+* `Apellido LastName`
+
+Here are some potential superkeys:
+
+* `StudentID` (assuming each student has a unique ID) 👉✅
+* `📚 EnrollmentNumber` (assuming each enrollment number is unique) 👉✅
+* `📧 Email` (assuming each email is unique for a student) 👉✅
+* `StudentID` + `📛 FirstName` (even though `StudentID` is enough, adding `FirstName` still keeps it unique, making it a superkey) 👉✅➕📛
+
+## 🌱 Natural Key (Business Key)
+
+A natural key is a type of superkey that consists of one or more attributes that naturally exist and are used in the real world to identify an entity. They have a business meaning outside of the database itself.
+
+**Concept:** These are identifiers you'd use in everyday conversation or business processes. They have inherent meaning.
+
+**Example:**
+
+In an `📚 Courses` table:
+
+* `CourseID` (could be a system-generated ID - not natural)
+* `📝 CourseCode` (e.g., "CS101", "MATH203")
+* `✨ CourseTitle`
+* `🧑‍🏫 Instructor`
+
+The `📝 CourseCode` is a good candidate for a natural key because it's a real-world identifier used to refer to a specific course. 👉🌱📝
+
+In a `📖 Books` table:
+
+* `BookID` (system-generated)
+* `ISBN` (International Standard Book Number)
+* `📚 Title`
+* `✍️ Author`
+
+The `ISBN` is a classic example of a natural key. 👉🌱
+
+**Caveat:** Natural keys can sometimes change or not be universally unique, which can cause issues.
+
+## 🤔 Intelligent Key
+
+An intelligent key is a key where the key itself contains meaningful information about the entity it identifies. While seemingly helpful, they are often discouraged in modern database design because the embedded information can change, leading to update anomalies and data inconsistencies.
+
+**Concept:** The key tells you something *about* the data it identifies.
+
+**Example:**
+
+In an `📦 Orders` table, an intelligent key might be `OrderID` formatted like `YYMMDD-SequenceNumber`, e.g., `240506-001`.
+
+* `OrderID` (e.g., `240506-001`) 🤔
+* `📅 OrderDate`
+* `🛍️ Product`
+* `💰 Amount`
+
+Here, `240506` tells you the date the order was placed. However, if the order date needs correction, you have to change the key, which is generally bad practice. 👎
+
+## 🤖 Artificial Key (Surrogate Key)
+
+An artificial key, also known as a surrogate key, is a system-generated identifier that has no meaning outside of the database. It's typically a simple number or a GUID (Globally Unique Identifier) assigned sequentially or randomly. They are added to a table specifically to serve as the primary key when a suitable natural key is not available, is too complex, or is likely to change.
+
+**Concept:** A meaningless but reliable internal identifier.
+
+**Example:**
+
+In a `🙋‍♀️ Customers` table where a natural key might be complex (like a combination of name and address which could change), you might add an `CustomerID`:
+
+* `🤖 CustomerID` (e.g., 1, 2, 3...) ✅
+* `📛 FirstName`
+* `Apellido LastName`
+* `🏠 Address`
+
+The `🤖 CustomerID` here is a simple, stable, and unique identifier with no business meaning. It's purely for database purposes. 👉🤖
+
+## 🤝 Overlapping Key
+
+Overlapping keys occur when a table has multiple candidate keys, and these candidate keys share one or more attributes.
+
+**Concept:** When two or more potential unique identifiers in the same table have some attributes in common.
+
+**Example:**
+
+Consider a table tracking product reviews, `⭐️ ProductReviews`:
+
+* `👤 UserID`
+* `🍎 ProductID`
+* `📅 ReviewDate`
+* `📝 ReviewText`
+
+Let's say that a user can only review a specific product once per day. In this case, two candidate keys could be:
+
+1.  `👤 UserID` + `🍎 ProductID` + `📅 ReviewDate` (Assuming a user reviews a product at most once per day) ✅
+2.  `👤 UserID` + `📅 ReviewDate` + `🍎 ProductID` (The order doesn't matter for uniqueness) ✅
+
+These two candidate keys are overlapping because they share all their attributes: `👤 UserID`, `🍎 ProductID`, and `📅 ReviewDate`. 👉🤝
+
+Another example:
+
+Consider a table `🗓️ EventRegistrations`:
+
+* `👤 PersonID`
+* `📅 EventDate`
+* `⏰ EventTime`
+* `📍 Location`
+
+Let's say a person can only register for one event at a specific date and time, and also that an event at a specific location can only have one person registered at a given date and time.
+
+Candidate Key 1: `👤 PersonID` + `📅 EventDate` + `⏰ EventTime` ✅
+Candidate Key 2: `📍 Location` + `📅 EventDate` + `⏰ EventTime` ✅
+
+These keys are overlapping because they share the attributes `📅 EventDate` and `⏰ EventTime`. 👉🤝
+
+Understanding these different key types is crucial for designing efficient and reliable relational databases! ✨
