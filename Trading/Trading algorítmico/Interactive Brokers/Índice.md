@@ -13,3 +13,4 @@
 [[4. Información de órdenes existentes]]
 [[5. Órdenes con diferentes clientes]]
 [[6. Información de órdenes ejecutadas]]
+[[7. Diferentes tipos de órdenes]]
