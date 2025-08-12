@@ -14,3 +14,7 @@
 [[5. Órdenes con diferentes clientes]]
 [[6. Información de órdenes ejecutadas]]
 [[7. Diferentes tipos de órdenes]]
+
+---
+## Sección 8: Gestión de la cuenta y portafolio
+[[1. Resumen de la cuenta]]
